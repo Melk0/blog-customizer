@@ -59,6 +59,13 @@ export const ArticleParamsForm = ({
 					className={styles.form}
 					onSubmit={(e: SyntheticEvent) => {
 						e.preventDefault();
+						pageSettings = {
+							fontFamilyOption: selectedFamily,
+							fontColor: selectedFontColor,
+							backgroundColor: selectedBackgroundColor,
+							contentWidth: selectedContentWidth,
+							fontSizeOption: selectedSize,
+						};
 						handleSetSettings(pageSettings);
 					}}>
 					<Text
@@ -115,19 +122,7 @@ export const ArticleParamsForm = ({
 								setSelectedSize(defaultArticleState.fontSizeOption);
 							}}
 						/>
-						<Button
-							title='Применить'
-							type='submit'
-							onClick={() => {
-								pageSettings = {
-									fontFamilyOption: selectedFamily,
-									fontColor: selectedFontColor,
-									backgroundColor: selectedBackgroundColor,
-									contentWidth: selectedContentWidth,
-									fontSizeOption: selectedSize,
-								};
-							}}
-						/>
+						<Button title='Применить' type='submit' onClick={() => {}} />
 					</div>
 				</form>
 			</aside>
